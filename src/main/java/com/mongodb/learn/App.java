@@ -1,8 +1,5 @@
 package com.mongodb.learn;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
@@ -21,8 +18,10 @@ public class App
 
             //CRUD
             Crud crud = new Crud(MongoClientConnection.getMongoClient());
-            //INSERT MANY
-            crud.insertOneDocument(post);
+            //INSERT ONE
+            //crud.insertOneDocument(post);
+            
+            crud.showPosts();
         }
     }
 }

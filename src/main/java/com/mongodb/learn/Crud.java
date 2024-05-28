@@ -2,6 +2,7 @@ package com.mongodb.learn;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
 import org.bson.BsonValue;
@@ -20,4 +21,12 @@ public class Crud {
         BsonValue id = result.getInsertedId();
         System.out.println("Inserted document Id: " + id);
       }
+
+    public void showPosts() {
+        MongoCursor<Document> cursor = this.collection.find().iterator();
+
+        while (cursor.hasNext()) {
+            System.out.println(cursor.next().toJson());
+        }
+    }
 }
