@@ -18,10 +18,10 @@ public class App
 
             //CRUD
             Crud crud = new Crud(MongoClientConnection.getMongoClient());
-            //INSERT ONE
-            //crud.insertOneDocument(post);
             
-            crud.updateOnePostContent("Parker", "Hello! This is my first post in this community");
+
+            //crud.insertOneDocument(post);
+            //crud.updateOnePostContent("Parker", "Hello! This is my first post in this community");
             crud.showPosts();
         }
     }
